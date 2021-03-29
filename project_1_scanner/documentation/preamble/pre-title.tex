@@ -1,0 +1,93 @@
+\begin{titlepage}
+	\sffamily
+	\hfill
+	\includegraphics[width=5cm]{\cfgLogo}
+	%\HRule{13pt}{2pt}
+
+	\centering
+		\Large
+		\vlinespace{3}
+		\cfgTyp\\
+		\vlinespace{1}
+		\Huge\
+		\textbf{\cfgTitle}\\
+
+		% display \cfgSubTitle set
+		\ifx\cfgSubTitle\undefined
+		\else
+			\Large
+			\vlinespace{0.5}
+			\cfgSubTitle \\
+		\fi
+
+		\ifx\cfgStudyPath\undefined
+			\vlinespace{3}
+		\else
+			\large
+			\vlinespace{3}
+					\cfgStudyPath \\
+					\cfgDepartment\xspace\cfgDepartmentName\\
+					\cfgUniversity\\
+			
+		\fi
+
+		% display \cfgSemester if available
+		\ifx\cfgSemester\undefined
+			\vlinespace{1}
+		\else
+			\cfgSemester\\
+		\fi
+
+		\large
+		\vlinespace{1}
+		\raggedright
+
+		\vfill
+		\raggedright
+		\large
+		\vlinespace{1}
+
+		\begin{tabular}{ll}
+			\ifdefined\cfgSecAuthor
+				\titleemph{\cfgAuthorsText:}		& \cfgAuthor \\
+													& \cfgSecAuthor \\
+			\else
+				\titleemph{\cfgAuthorText:}			& \cfgAuthor \\
+				\titleemph{\cfgMatrNrText:}			& \cfgMatrNr \\
+			\fi
+
+			& \\
+
+			\ifdefined\cfgDatum
+				\titleemph{\cfgDateText:} 			& \cfgDatum \\
+			\fi	
+			\ifdefined\cfgInspector
+				\titleemph{\cfgInspectorText:} 		& \cfgInspector \\
+			\fi
+			\ifdefined\cfgSecInspector
+				\titleemph{\cfgSecInspectorText:}	& \cfgSecInspector \\
+			\fi
+		\end{tabular}
+
+		% display the company information if available
+  		
+  		\ifx\cfgCompany\undefined
+  		\else
+		\vlinespace{1}
+		\HRule{10pt}{2pt} \\
+  		\begin{minipage}{0.55\textwidth}
+  			\titleemph{Company:} \cfgCompany \hfill \\
+  			\ifx\cfgCompanyAdvisor\undefined
+	  			\else
+	  			\titleemph{Mentor:} \cfgCompanyAdvisor\\
+  			\fi
+  		\end{minipage}
+  		\begin{minipage}{0.40\textwidth}
+			\begin{flushright}
+				\includegraphics[height=1.7cm]{\cfgCompanyLogo}\\
+			\end{flushright}
+  		\end{minipage}
+  		\fi
+  		\vlinespace{1}
+\end{titlepage}
+

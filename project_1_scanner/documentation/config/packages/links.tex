@@ -1,0 +1,34 @@
+%Links
+\usepackage{url}					%for URL
+\ifpdf							%output==pdf
+	\usepackage{pdfpages}		%include PDF-Pages
+	\usepackage[pdftex]{hyperref}%options hyperref at pdf
+\else
+	\usepackage[dvipdfm]{hyperref}
+\fi
+\definecolor{_urlcolor}{rgb}{0,0,0} % black, invisble
+\hypersetup{
+	pdfhighlight=/O,		%set highlighting of PDF links
+	%color
+	colorlinks=true,	    %links are colored
+	urlcolor=_urlcolor,	%external (URL)
+	filecolor=_urlcolor,	%local file
+	linkcolor=_urlcolor,	%\ref{...} and \pageref{...}
+	citecolor=_urlcolor,	%link at bibliographical   
+	%links
+	raiselinks=true,		%calculate real height of link
+	breaklinks,			%allow links to break over lines
+	verbose,
+	linktoc=all,			%set both so linked
+	%bookmarks
+	bookmarksopen=true,	%open up bookmark tree
+	bookmarksopenlevel=1,%level to which bookmarks open
+	bookmarksnumbered=true,%put sectionNr in bookmarks
+	bookmarkstype=toc,	%specify which ‘toc’ file to mimic anchors
+	plainpages=false,	%do pageNr anchors as plain arabic
+	pageanchor=true,		%put an anchor on every page PDF informations
+	pdftitle={\cfgTyp: \cfgTitle},	%title of PDF
+	pdfauthor={\cfgAuthor},			%author of PDF
+	pdfcreator={LaTeX},				%creator of PDF	
+	pdffitwindow=true	%window to fit to cument size
+}

@@ -1,0 +1,14 @@
+\usepackage{nomencl}
+\makenomenclature
+\renewcommand{\nomname}{List of Abbreviations} % using chapter heading instead
+\makeatletter
+\def\thenomenclature{%
+	\chapter{\nomname}
+	\nompreamble
+	\list{}{%
+		\labelwidth\nom@tempdim
+		\leftmargin\labelwidth
+		\advance\leftmargin\labelsep
+		\itemsep\nomitemsep
+		\let\makelabel\nomlabel}}
+\makeatother

@@ -1,0 +1,6 @@
+%Footer
+\ifx\cfgMarkDateTime\undefined
+\else
+\ifoot[\cfgMarkDateTime]{\cfgMarkDateTime} %left: DateTime
+\fi
+\ofoot[\pagemark]{\pagemark}	%right: pageNr
