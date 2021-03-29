@@ -33,7 +33,7 @@ jobs:
           root_file: document.tex
       # export pdf
       - name: Export document
-      - uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v2
         with:
           name: PDF
           path: document.pdf
