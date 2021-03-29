@@ -29,4 +29,5 @@ jobs:
       - name: Compile LaTeX document
         uses: xu-cheng/latex-action@v2
         with:
-          root_file: project_1_scanner/documentation/document.tex
+          working_directory: project_1_scanner/documentation
+          root_file: document.tex
