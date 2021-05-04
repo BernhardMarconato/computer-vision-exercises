@@ -1,0 +1,54 @@
+%\begin{CONFIG} %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[
+    a4paper,                	% paper format
+    12pt,                   	% standard font-size
+    1.1headlines,           	% linespace of headline
+    pagesize,               	% write the paper format into the document
+    oneside,                	% one column at a page
+    titlepage,              	% titlepage-environment has its own page
+    fleqn,                  	% flush left formulas
+    listof=numbered,        	% number chapter from listof
+    bibliography=totocnumbered, % number chapter to biblio
+]{scrbook}
+
+\input{config/cfg-commands}
+\input{config/cfg-font}
+\input{config/cfg-variables}
+\input{config/cfg-packages}
+
+%\end{CONFIG} %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+% listing style options
+\lstset{
+    basicstyle=\footnotesize,
+    language=Python
+}
+%\begin{PREAMBLE} %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\frontmatter
+\include{preamble/pre-title}
+\include{preamble/pre-deposition}
+%\include{preamble/pre-blockingNotice}
+\tableofcontents
+\newpage
+
+%\end{PREAMBLE} %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\begin{CONTENT} %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\mainmatter
+
+\include{content/task}
+\include{content/main}
+\include{content/conclusion}
+
+%\end{CONTENT} %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\begin{APPENDIX} %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\appendix
+
+%\include{appendix/...}
+
+\listoffigures
+%\listoftables
+\lstlistoflistings
+\emergencystretch 6em
+\printbibliography
+%\end{APPENDIX} %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{document}
