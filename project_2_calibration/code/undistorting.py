@@ -1,5 +1,7 @@
 import os
 import shutil
+import array_to_latex as a2l
+import numpy as np
 
 from CameraCalibrator import CameraCalibrator
 from VideoFrameExtractor import VideoFrameExtractor
@@ -8,7 +10,6 @@ chc1 = "videos/ch0.mp4"  # "videos/checkerboard_000.h264"
 chc2 = "videos/ch1.mp4"  # "videos/checkerboard_019.h264"
 chc_size = (7, 6)
 
-# video 1
 extractor_1 = VideoFrameExtractor(chc1)
 extractor_2 = VideoFrameExtractor(chc2)
 
@@ -19,10 +20,12 @@ frames_1 = extractor_1.get_video_frames(fids_1)
 frames_2 = extractor_2.get_video_frames(fids_2)
 m_frames = frames_1 + frames_2
 
-print("test")
-
+# get camera parameters
 calibrator = CameraCalibrator(m_frames, chc_size)
 params = calibrator.get_camera_params()
+print(params)
+
+print(params[3])
 
 # undistort images
 subfolder = "calibration"

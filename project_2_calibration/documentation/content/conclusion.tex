@@ -1,1 +1,11 @@
-\chapter{Review}
+\chapter{Conclusion}
+
+To summarize, while the undistortion has worked generally and improved the image perspective, it is still not perfect, with the outer parts of the undistorted images still being slightly undistorted. Some of the main reasons (but not limited to them) are the not optimal chessboard layout, varying lighting conditions and the big distance differences between video 1 and 2.
+
+It could be tested whether calibrating the camera only with frames of video 1 yields better results, although this could only improve the undistortion in close distance to the camera and not farther away. Also, instead of the reprojection error a different, more precise metric could be used for rating the camera parameter precision, that for example also takes the chessboard size and form into account. This could lead tomore realistic parameters.
+
+Another possibility would be to improve the video material with a chessboard that is more compatible with the OpenCV algorithm (white border) or improved lighting conditions/disabled auto-exposure.
+
+Instead of a long video, it could be possible to capture only a few still frames (10-20 frames), but therefore make sure the chessboard is always visible and detectable and is in various distances or tilting angles. This would make using random frames obsolete and reduce computation time and effort, and also precision.
+
+Alongside using a standard chessboard it could also be possible to analyze whether calibration results improve when using a circular grid \cite{cv_cctut} or even a more sophisticated looking \enquote{ChArUco} board instead. \cite{cv_charuco}
