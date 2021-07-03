@@ -1,0 +1,59 @@
+%Site-Layout
+\usepackage{ifpdf}				%add a function to decide
+								%if output==pdf
+\usepackage{scrtime}				%alloy \thistime
+\typearea[current]{last}			%Layout with textarea's
+\raggedbottom					%variable site high
+\usepackage[stable,perpage,ragged, multiple]{footmisc} %edit footnote
+\usepackage[
+	automark,
+	headsepline
+]{scrlayer-scrpage}
+\pagestyle{scrheadings}			%page with header
+\clearscrheadings				%remove headerdefault
+\clearscrplain
+
+\usepackage{xspace} 			%Define commands that don't eat spaces.
+\usepackage{xcolor}				%for custom colors
+\usepackage{graphicx}			%includegraphics
+
+\usepackage{upquote}			%correct quotes
+\usepackage{csquotes} 			%enquote
+\usepackage{eqparbox}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{caption}
+\usepackage{subcaption}
+
+%Float
+\setcounter{topnumber}{3}		%default: 2
+\setcounter{bottomnumber}{2}	%default: 1
+\setcounter{totalnumber}{5}		%default: 3
+\usepackage{flafter}			%only float after ref
+\usepackage{wrapfig}			%text float around elements
+\usepackage{float}				%image float
+
+\input{config/packages/links}
+\input{config/packages/listings}
+\input{config/packages/tables}
+\input{config/packages/headers}
+\input{config/packages/footers}
+
+\deffootnote{1.5em}{1em}{\makebox[1em][l]{\thefootnotemark}}
+\addtolength{\skip\footins}{\baselineskip}	%space Nr<->Text
+\setlength{\dimen\footins}{10\baselineskip}	%max Footnotelines
+
+\input{config/packages/bibliography}
+\input{config/packages/nomenclature} % List of Abbreviations
+
+%Warning Resolving
+\pdfoptionpdfminorversion=7	%PDF inclusion: found PDF version 1.7, but at most version 1.5 allowed
+\usepackage{scrhack}    %Class scrbook Warning: \float@addtolists detected!
+
+%\RedeclareSectionCommand[ 
+%% make section numbers wider in toc to fit numbers such as 11.10. and 11.11.
+%% only enable if necessary
+%	tocnumwidth=34pt
+%]{section}
+
+\definecolor{draft-color}{RGB}{0,180,0}

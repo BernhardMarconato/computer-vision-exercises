@@ -1,0 +1,30 @@
+% Contains commands and Environments used later in the document
+
+\newcommand{\toCfg}[1]{\textcolor{red}{toCfg: #1}}
+
+% usage: \todo{ ... }
+\newcommand{\todo}[1]{\textcolor{red}{@TODO: #1}}
+
+% usage: \begin{draft} <empty line> ... \end{draft}
+\newenvironment{draft}{
+    \leavevmode\color{draft-color}\ignorespaces
+}{}
+
+% usage: \begin{draft} <empty line> ... \end{draft}
+\usepackage{verbatim}
+\usepackage{spverbatim}
+\newenvironment{draftvb}{
+	\leavevmode\color{draft-color}\ignorespaces\spverbatim
+}{
+	\endverbatim %\endspverbatim does not seem to work here
+}
+
+\newcommand\TwoDigits[1]{%
+	\ifnum#1<10 0#1\else #1\fi
+}
+
+\newcommand{\HRule}[2]{\noindent\rule[#1]{\linewidth}{#2}}
+\newcommand{\vlinespace}[1]{\vspace*{#1\baselineskip}}
+\newcommand{\titleemph}[1]{\textbf{#1}}
+
+%\newcommand{\inlinecode}{\texttt}

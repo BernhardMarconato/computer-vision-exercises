@@ -1,0 +1,9 @@
+\chapter{Conclusion}
+
+The low error rate of around 5 \% shows that it is generally possible to estimate distances relative to the camera without detailed knowledge of the camera sensor - only with camera calibration using a chessboard with known size. While this is a working approach and very cost-effective, it can be prone to errors if the calibration and the intrinsic camera matrix are not accurate enough. Therefore, it is important to have high-quality calibration videos to reduce the error as much as possible.
+
+The precondition of having a chessboard perpendicular to the camera cannot be fulfilled in every case, however. Also the results of the camera calibration approach can vary significantly, as discovered in lecture discussions.
+
+That's why for more serious applications like autonomous driving, more advanced distance estimation methods should be researched. Following a similar approach, the OpenCV method \texttt{solvePnP()} could be used for the pose estimation of the chessboard. According to the documentation, this method can even be used with a non-perpendicular chessboard to estimate distance and other pose information of the chessboard. \cite{cv_solvepnp} Additionally, calculations could be simplified if the focal length of the camera sensor would be available.
+
+As covered in the lecture, the problem could also be solved with more (advanced) hardware - by using two cameras for example. Even more expensive solutions like using Lidar sensors, which are already built into current iPhone and iPad Pro models and can be used in the preinstalled \enquote{Measure} app, could also be a possibility. \cite{apple_lidar}
